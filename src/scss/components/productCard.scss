@@ -1,0 +1,58 @@
+@import '../variables';
+
+.product__image{
+  margin-bottom: 15px;
+}
+
+.product__name{
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 18px;
+  font-style: italic;
+}
+
+.product__description{
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.product__stats{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.product__select{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // height: 34px;
+}
+
+.product__button{
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  width: 40px;
+  border: 1px solid $textColor;
+  border-radius: 20px;
+  font-size: 22px;
+  color: $textColor;
+  transition: color 250ms linear, border-color 250ms linear;
+  cursor: pointer;
+
+  &:hover,
+  &:focus{
+    color: $accentColor;
+    border-color: $accentColor;
+  }
+
+  &--right{
+    transform: rotate(180deg)
+  }
+}
+
+.product__count{
+  margin: 0 20px;
+  font-size: 18px;
+}

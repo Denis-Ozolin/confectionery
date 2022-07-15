@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import '../variables';
+
+// .productList{
+//   padding: 30px 0;
+// }
+
+.productList__container{
+  margin: 0 auto;
+  width: 1200px;
+}
+
+.productList__title{
+  margin-bottom: 30px;
+  text-align: center;
+  color: $textColor;
+  font-size: 32px;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.productList__cardset {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -20px -10px;
+  list-style: none;
+}
+
+.productList__card {
+  width: calc((100% - 8 * 10px) / 4);
+  margin: 20px 10px;
+}

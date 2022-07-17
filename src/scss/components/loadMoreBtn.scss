@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import '../variables';
+
+.loadMore{
+  width: 260px;
+  margin: 0 auto;
+  margin-top: 40px;
+  padding: 12px 0;
+  border: 2px solid $textColor;
+  border-radius: 30px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: italic;  
+  transition: color 250ms linear,
+  border 250ms linear;
+  cursor: pointer;
+  user-select: none;
+
+  &:hover,
+  &:focus{
+    color: $accentColor;
+    border-color: $accentColor;
+  }
+}

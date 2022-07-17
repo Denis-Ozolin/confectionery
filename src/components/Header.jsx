@@ -1,20 +1,47 @@
-import React from 'react'
+import { useState } from 'react'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 import { Social } from '../components'
 
-function Header() {
+const productCategories = ['Вагові торти', 'Порційні торти', 'Тістечка', 'Трайфли'];
+
+function Header({getProductCategory}) {
+  const [onSortNav, setOnSortNav] = useState(false);
+
+  const toggleSortNav = () => {
+    setOnSortNav(!onSortNav);
+  }
+
+  const getDefaultCategory = (event) => {
+    event.preventDefault();
+    toggleSortNav();
+    getProductCategory(event.target.textContent);
+  }
+
   return (
     <header className='header'>
       <div className="header__wrapper">
         <div className='header__container'>
           <h2 className='header__title'>Sweet Village</h2>
-          <nav>
-            <ul className='nav__list'>
-              <li className='nav__item'>Продукція</li>
-              <li className='nav__item'>Співпраця</li>
-              <li className='nav__item'>Доставка</li>
-              <li className='nav__item'>Контакти</li>
-            </ul>
+          <nav className='header__nav'>
+            {!onSortNav ?
+              <AnchorLink onClick={(e) => getDefaultCategory(e)} href='#products' offset='100' className='nav__link nav__link--main'>Продукція</AnchorLink> :
+              <AnchorLink onClick={toggleSortNav} href='#home' offset='100' className='nav__link nav__link--main'>Головне меню</AnchorLink>
+            }
+            {!onSortNav ? 
+              <ul className='nav__list'>
+                <li className='nav__item'>Співпраця</li>
+                <li className='nav__item'>Доставка</li>
+                <li className='nav__item'>Контакти</li>
+              </ul> :
+              <ul className='nav__list'>
+                {productCategories.map((category) =>
+                  <li key={category} className='nav__item'>
+                    <AnchorLink onClick={() => getProductCategory(category)} href='#products' offset='100' className='nav__link'>{category}</AnchorLink>
+                  </li>  
+                )}
+              </ul>  
+            }    
           </nav>
           <div className="header__settings">
             <div className='login'>

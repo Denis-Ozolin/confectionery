@@ -31,23 +31,34 @@
   color: $accentColor;
 }
 
+.header__nav{
+  display: flex;
+}
+
 .nav__list{
   display: flex;
   list-style: none;
 }
 
 .nav__item{
-  padding: 10px;
-  transition: color 250ms linear;
-  cursor: pointer;
-
-  &:hover,
-  &:focus{
-    color: $accentColor;
-  }
-
   &:not(:last-child) {
     margin-right: 80px;
+  }
+}
+
+.nav__link{
+  transition: color 250ms linear;
+  text-decoration: none;
+  color: $textColor;
+
+  &--main{
+    margin-right: 80px;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $accentColor;
   }
 }
 

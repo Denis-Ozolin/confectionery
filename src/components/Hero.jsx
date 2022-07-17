@@ -7,7 +7,7 @@ import rightImage from '../images/hero/rightImage.jpg'
 
 function Hero() {
   return (
-    <section className='hero'>
+    <section id='home' className='hero'>
       <div className='hero__container'>
           <ul className='hero__cardset'>
             <li className='hero__card'>

@@ -1,0 +1,52 @@
+.form {
+  display: flex;
+  flex-direction: column;
+
+  &__area {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 30px;
+  }
+
+  &__label {
+    font-size: 20px;
+    font-style: italic;
+  
+    &--required {
+      font-size: 20px;
+      color: $accentColor;
+    }
+  }
+
+  &__field{
+    position: relative;
+    flex: 0 1 60%;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 30px;
+    outline: 2px solid $textColor;
+    background-color: rgb(255, 255, 255);
+    font-size: 16px;
+    font-style: italic;
+    color: $textColor;
+    transition: $transition;
+
+    &:focus,
+    &:active {
+      box-shadow: 0 0 4px 0 $accentColor inset, 0 0 4px 2px $accentColor;
+      outline: none;
+    }
+  }
+
+  &__error-msg{
+    position: absolute;
+    left: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: $accentColor;
+  }
+}

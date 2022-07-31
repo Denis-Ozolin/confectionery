@@ -1,59 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
-@import '../variables';
-
 .header{
   position: sticky;
+  height: 90px;
   top: 0;
   width: 100%;
+  z-index: 5;
   background-color: $bgColor;
   box-shadow: inset 0 20px 16px -16px rgba($color: $textColor, $alpha: 0.5);
-  z-index: 10;
-}
 
-.header__wrapper{
-  padding: 20px 0;
+  &::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 1200px;
+    height: 2px;
+    z-index: 6;
+    transform: translateX(-50%);
+    background-color: $textColor;
+  }
 }
 
 .header__container{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 1280px;
-  margin: 0 auto;
-  padding: 0 20px;
+  height: inherit;
+  max-width: 1260px;
 }
 
-.header__title {
-  text-align: center;
+.header__logo {
   font-size: 32px;
-  font-weight: 400;
-  font-family: 'Dancing Script', cursive;
+  font-weight: 500;
+  font-family: 'Dancing Script';
   color: $accentColor;
 }
 
-.header__nav{
-  display: flex;
-}
-
+.nav,
 .nav__list{
   display: flex;
-  list-style: none;
-}
-
-.nav__item{
-  &:not(:last-child) {
-    margin-right: 80px;
-  }
+  gap: 80px;
 }
 
 .nav__link{
-  transition: color 250ms linear;
-  text-decoration: none;
+  transition: $transition;
   color: $textColor;
-
-  &--main{
-    margin-right: 80px;
-  }
 
   &:hover,
   &:focus,
@@ -87,16 +77,9 @@
 .login__icon {
   margin-right: 8px;
   fill: $textColor;
-  transition: fill 250ms linear;
+  transition: $transition;
 }
 
 .login__text{
-  transition: color 250ms linear;
-}
-
-.header__line{
-  width: 1200px;
-  height: 2px;
-  margin: 0 auto;
-  background-color: $textColor;
+  transition: $transition;
 }

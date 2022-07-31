@@ -1,5 +1,8 @@
-import { useState } from 'react';
-import { Header, Hero, ProductList } from './components';
+import { Routes, Route } from 'react-router-dom'
+import { useState } from 'react'
+
+import { Main, Auth } from './pages'
+import { Header, Footer } from './components'
 
 function App() {
   const [productCategory, setProductCategory] = useState('Продукція');
@@ -9,11 +12,14 @@ function App() {
   }
 
   return (
-    <>
+    <div className='wrapper'>
       <Header getProductCategory={onChangeProductCategory} />
-      <Hero />
-      <ProductList title={productCategory} />
-    </>
+      <Routes>
+        <Route path='*' element={<Main title={productCategory}/>}/>
+        <Route path='/cooperation' element={<Auth/>} />
+      </Routes>
+      <Footer/>
+    </div>
   )
 }
 

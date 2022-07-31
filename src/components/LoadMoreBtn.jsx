@@ -2,7 +2,7 @@ import React from 'react'
 
 function LoadMoreBtn() {
   return (
-    <div className='loadMore'>Завантажити ще</div>
+    <button className='loadMore' type='button'>Завантажити ще</button>
   )
 }
 

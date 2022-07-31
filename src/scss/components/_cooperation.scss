@@ -1,0 +1,19 @@
+.cooperation{
+  background-image: linear-gradient(to right bottom, #fdfcfe, #ffffff);
+
+  &__body{
+    display: flex;
+    gap: 3%;
+  }
+
+  &__form,
+  &__content{
+    flex-basis: 50%;
+  }
+
+  &__text {
+    line-height: 2;
+  }
+}
+
+

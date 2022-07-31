@@ -1,9 +1,5 @@
 import React from 'react'
 
-// import instagram from '../images/instagram.svg';
-// import telegram from '../images/telegram.svg';
-
-
 function Social() {
   return (
     <ul className='social__list'>

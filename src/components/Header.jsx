@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { NavLink, useLocation } from 'react-router-dom'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 import { Social } from '../components'
@@ -7,6 +8,8 @@ const productCategories = ['Вагові торти', 'Порційні торт
 
 function Header({getProductCategory}) {
   const [onSortNav, setOnSortNav] = useState(false);
+  const location = useLocation();
+  const isCooperation = location.pathname === '/cooperation';
 
   const toggleSortNav = () => {
     setOnSortNav(!onSortNav);
@@ -20,29 +23,41 @@ function Header({getProductCategory}) {
 
   return (
     <header className='header'>
-      <div className="header__wrapper">
         <div className='header__container'>
-          <h2 className='header__title'>Sweet Village</h2>
-          <nav className='header__nav'>
+          <AnchorLink href='#home' offset='90'>
+            <NavLink to='*'>
+              <h2 className='header__logo'>Sweet Village</h2>
+            </NavLink> 
+        </AnchorLink>      
+        {isCooperation ?
+          <NavLink to='*' className='nav__link'>На головну</NavLink> : 
+          <nav className='header__nav nav'>
             {!onSortNav ?
-              <AnchorLink onClick={(e) => getDefaultCategory(e)} href='#products' offset='100' className='nav__link nav__link--main'>Продукція</AnchorLink> :
-              <AnchorLink onClick={toggleSortNav} href='#home' offset='100' className='nav__link nav__link--main'>Головне меню</AnchorLink>
+              <AnchorLink onClick={(e) => getDefaultCategory(e)} href='#product' offset='90' className='nav__link nav__link--main'>Продукція</AnchorLink> :
+              <AnchorLink onClick={toggleSortNav} href='#home' offset='90' className='nav__link nav__link--main'>Головне меню</AnchorLink>
             }
             {!onSortNav ? 
               <ul className='nav__list'>
-                <li className='nav__item'>Співпраця</li>
-                <li className='nav__item'>Доставка</li>
-                <li className='nav__item'>Контакти</li>
+                <li>
+                  <AnchorLink href='#delivery' offset='90' className='nav__link'>Доставка</AnchorLink>
+                </li>
+                <li>
+                  <AnchorLink href='#contacts' offset='90' className='nav__link'>Контакти</AnchorLink>
+                </li>
+                <li>
+                  <NavLink to='/cooperation' className='nav__link'>Співпраця</NavLink>
+                </li>
               </ul> :
               <ul className='nav__list'>
                 {productCategories.map((category) =>
-                  <li key={category} className='nav__item'>
-                    <AnchorLink onClick={() => getProductCategory(category)} href='#products' offset='100' className='nav__link'>{category}</AnchorLink>
+                  <li key={category} onClick={() => getProductCategory(category)}>
+                    <AnchorLink href='#products' offset='90' className='nav__link'>{category}</AnchorLink>
                   </li>  
                 )}
               </ul>  
-            }    
+            }
           </nav>
+        }       
           <div className="header__settings">
             <div className='login'>
               <svg className='login__icon' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="30px" height="30px">
@@ -53,8 +68,6 @@ function Header({getProductCategory}) {
             <Social />
           </div>
         </div>
-      </div>
-      <div className='header__line'></div>
     </header>
 
   )

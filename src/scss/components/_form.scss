@@ -35,6 +35,10 @@
     color: $textColor;
     transition: $transition;
 
+    &--password{
+      padding-right: 32px;
+    }
+
     &:focus,
     &:active {
       box-shadow: 0 0 4px 0 $accentColor inset, 0 0 4px 2px $accentColor;
@@ -48,5 +52,19 @@
     font-size: 14px;
     line-height: 1.4;
     color: $accentColor;
+  }
+
+  &__show-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    right: 10px;
+    background-color: transparent;
+    transform: translateY(-50%);
+    cursor: pointer;
   }
 }

@@ -31,7 +31,7 @@ function Form({defaultValues, schema, formOptions, submitText}) {
             value={formik.values[name]}
             name={name}
             id={name}
-            className='form__input form__input--password'
+            className={type? 'form__input': 'form__input form__input--password'}
             type={!type? showPassword? 'text': 'password': type}
           />
           {formik.errors[name] && <p className='form__error-msg'>{formik.errors[name]}</p>}

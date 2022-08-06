@@ -1,9 +1,11 @@
 import React from 'react'
 
-function LoadMoreBtn() {
+function SmallButton({children, onClick}) {
   return (
-    <button className='loadMore' type='button'>Завантажити ще</button>
+    <button onClick={onClick} className='smallButton' type='button'>
+      {children}
+    </button>
   )
 }
 
-export default LoadMoreBtn
+export default SmallButton

@@ -20,11 +20,8 @@ function Modal({ children, closeModal }) {
   return (
     <div className='modal'>
       <div onClick={handleBackdropClick} className='modal__backdrop'>
-        <div className='modal__login-window'>
-          <div className='modal__close-btn'></div>
           {children}
         </div>
-      </div>
     </div>
   );
 }

@@ -2,14 +2,14 @@
   position: relative;
   display: block;
   padding: 15px 30px;
-  margin: 10px auto 0 auto;
+  margin: 0 auto;
   border-radius: 30px;
   box-shadow: 0 0 40px 40px $accentColor inset, 0 0 0 0 $accentColor;
   font-weight: bold;
   font-size: 16px;
   font-style: italic;
   letter-spacing: 2px;
-  color: $bgColor;
+  color: $defaultColor;
   transition: $transition;
   cursor: pointer;
   z-index: 2;
@@ -18,5 +18,43 @@
   &:focus{
     box-shadow: 0 0 8px 0 $accentColor inset, 0 0 8px 4px $accentColor;
     color: $accentColor;
+  }
+
+  &:active{
+    box-shadow: 0 0 40px 40px $accentColor inset, 0 0 0 0 $accentColor;
+    color: $defaultColor;
+  }
+}
+
+.smallButton{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 6px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 0 $accentColor inset, 0 0 4px 2px $accentColor;
+  color: $accentColor;
+  transition: $transition;
+  cursor: pointer;
+
+  & > svg{
+    fill: $textColor;
+  }
+
+  &:hover{
+    & > svg {
+      fill: $accentColor;
+    }
+  }
+
+  &:active{
+    box-shadow: 0 0 20px 20px $accentColor inset, 0 0 0 0 $accentColor;
+    color: $defaultColor;
+
+    & > svg {
+      fill: $defaultColor;
+    }
   }
 }

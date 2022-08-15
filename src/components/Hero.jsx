@@ -4,7 +4,6 @@ import leftImage from '../images/hero/leftImage.jpg'
 import message from '../images/hero/main.jpg'
 import rightImage from '../images/hero/rightImage.jpg'
 
-
 function Hero() {
   return (
     <section id='home' className='hero'>

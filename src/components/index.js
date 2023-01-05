@@ -8,6 +8,7 @@ import { default as Button } from "./Button";
 import { default as ButtonIcon } from "./ButtonIcon";
 import { default as Delivery } from "./Delivery";
 import { default as Cooperation } from "./Cooperation";
+import { default as Cart } from "./Cart";
 import { default as Contacts } from "./Contacts";
 import { default as Map } from "./Map";
 import { default as Form } from "./Form";
@@ -26,6 +27,7 @@ export {
   ButtonIcon,
   Delivery,
   Cooperation,
+  Cart,
   Contacts,
   Map,
   Form,

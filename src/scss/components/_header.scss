@@ -1,4 +1,4 @@
-.header{
+.header {
   position: sticky;
   height: 90px;
   top: 0;
@@ -7,7 +7,7 @@
   background-color: $defaultColor;
   box-shadow: inset 0 20px 16px -16px rgba($color: $textColor, $alpha: 0.5);
 
-  &::after{
+  &::after {
     content: "";
     position: absolute;
     left: 50%;
@@ -18,43 +18,43 @@
     transform: translateX(-50%);
     background-color: $textColor;
   }
-}
 
-.header__container{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: inherit;
-  max-width: 1260px;
-}
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: inherit;
+    max-width: 1260px;
+  }
 
-.header__logo {
-  font-size: 32px;
-  font-weight: 500;
-  font-family: 'Dancing Script';
-  color: $accentColor;
-}
-
-.nav,
-.nav__list{
-  display: flex;
-  gap: 60px;
-}
-
-.nav__link{
-  transition: $transition;
-  color: $textColor;
-
-  &:hover,
-  &:focus,
-  &:active {
+  &__logo {
+    font-size: 32px;
+    font-weight: 500;
+    font-family: "Dancing Script";
     color: $accentColor;
+  }
+
+  &__settings {
+    display: flex;
+    align-items: center;
   }
 }
 
-.header__settings{
+.nav,
+.nav__list {
   display: flex;
-  align-items: baseline;
+  gap: 60px;
+
+  &__link {
+    transition: $transition;
+    color: $textColor;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $accentColor;
+    }
+  }
 }
 
 .login {
@@ -64,7 +64,7 @@
   cursor: pointer;
 
   &:hover .login__icon,
-  &:focus .login__icon{
+  &:focus .login__icon {
     fill: $accentColor;
   }
 
@@ -72,14 +72,14 @@
   &:focus .login__text {
     color: $accentColor;
   }
-}
 
-.login__icon {
-  margin-right: 8px;
-  fill: $textColor;
-  transition: $transition;
-}
+  &__icon {
+    margin-right: 8px;
+    fill: $textColor;
+    transition: $transition;
+  }
 
-.login__text{
-  transition: $transition;
+  &__text {
+    transition: $transition;
+  }
 }

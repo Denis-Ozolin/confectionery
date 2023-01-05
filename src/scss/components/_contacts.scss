@@ -1,3 +1,11 @@
-.contacts{
-  min-height: 100vh;
+.contacts {
+  &__body {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__content {
+    max-width: 700px;
+    padding-right: 30px;
+  }
 }

@@ -1,79 +1,53 @@
-@import '../variables';
+.product {
+  &__image {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
 
-.product__image{
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-}
+  &__content {
+    padding: 16px 0;
+  }
 
-.product__content{
-  padding: 16px 0;
-}
+  &__name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    margin-bottom: 10px;
+    padding: 0 10px;
+    overflow: hidden;
+    text-align: center;
+    font-size: 18px;
+    font-style: italic;
+  }
 
-.product__name{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50px;
-  margin-bottom: 10px;
-  padding: 0 10px;
-  overflow: hidden;
-  text-align: center;
-  font-size: 18px;
-  font-style: italic;
-}
+  &__description {
+    height: 82px;
+    padding: 0 16px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 16px;
+    overflow: hidden;
+  }
 
-.product__description{
-  height: 82px;
-  padding: 0 16px;
-  margin-bottom: 10px;
-  text-align: center;
-  font-size: 16px;
-  overflow: hidden;
-}
+  &__stats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
 
-.product__stats{
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 20px;
-}
+  &__select {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+  }
 
-.product__select{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  user-select: none;
-}
-
-// .product__button{
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   width: 32px;
-//   height: 32px;
-//   min-width: 32px;
-//   padding: 0;
-//   border: 2px solid $accentColor;
-//   border-radius: 50%;
-//   background-color: transparent;
-//   color: $textColor;
-//   transition: $transition;
-//   cursor: pointer;
-
-//   &:hover{
-//     background-color: $accentColor;
-//     color: $defaultColor;
-//   }
-
-//   &:active{
-//     background-color: transparent;
-//       color: $textColor;
-//   }
-// }
-
-.product__count{
-  width: 20px;
-  margin: 0 20px;
-  text-align: center;
-  font-size: 20px;
-  user-select: none;
+  &__count {
+    width: 20px;
+    margin: 0 20px;
+    text-align: center;
+    font-size: 20px;
+    user-select: none;
+  }
 }

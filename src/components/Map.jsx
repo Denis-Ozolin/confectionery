@@ -1,69 +1,49 @@
-import { useCallback, useRef, memo } from 'react'
-import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
+import { useCallback, useRef, memo } from "react";
+import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
 
-const API_KEY=process.env.REACT_APP_API_KEY;
-console.log(API_KEY);
+import { options } from "../settings/map/googleMapOptions";
+import { center, production, petrivsky } from "../settings/map/coordinates";
 
-const containerStyle = {
-  width: '400px',
-  height: '400px'
+const API_KEY = process.env.REACT_APP_API_KEY;
+
+const mapSize = {
+  width: "100%",
+  height: "100%",
 };
-
-const center = {
-  lat: -3.745,
-  lng: -38.523
-};
-
-const defaultOptions={
-  panControl:true,
-  zoomControl:true,
-  mapTypeControl:false,
-  scaleControl:false,
-  streetViewControl:false,
-  rotateControl:false,
-  clickableIcons:false,
-  keyboardShortcuts:false,
-  scrollwheel:false,
-  disableDoubleClickZoom:false,
-  fullscreenControl: false,
-}
 
 function Map() {
-  const mapRef = useRef(undefined)
+  const mapRef = useRef(undefined);
 
   const { isLoaded } = useJsApiLoader({
-    id: 'google-map-script',
+    id: "google-map-script",
     googleMapsApiKey: API_KEY,
-  })
-
-  // const [map, setMap] = useState(null)
+  });
 
   const onLoad = useCallback(function callback(map) {
-    // const bounds = new window.google.maps.LatLngBounds(center);
-    // map.fitBounds(bounds);
-    // setMap(map)
-
     mapRef.current = map;
-  }, [])
+  }, []);
 
   const onUnmount = useCallback(function callback(map) {
-    // setMap(null)
-
     mapRef.current = undefined;
-  }, [])
+  }, []);
 
   return isLoaded ? (
+    <div className="map">
       <GoogleMap
-        mapContainerStyle={containerStyle}
+        mapContainerStyle={mapSize}
         center={center}
-        zoom={10}
+        zoom={14}
         onLoad={onLoad}
         onUnmount={onUnmount}
-        options={defaultOptions}
+        options={options}
       >
-      <Marker position={center}/>
+        <Marker position={production} />
+        <Marker position={petrivsky} />
       </GoogleMap>
-  ) : <></>
+    </div>
+  ) : (
+    <></>
+  );
 }
 
-export default memo(Map)
+export default memo(Map);

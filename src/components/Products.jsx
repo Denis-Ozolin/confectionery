@@ -1,23 +1,23 @@
-import React from 'react'
-import products from '../db/products.json'
-import { ProductCard, Button } from '.'
+import React from "react";
+import products from "../db/products.json";
+import { ProductCard, Button } from ".";
 
-function Products({title}) {
+function Products({ title }) {
   return (
-    <section id='product' className='product'>
-      <div className="product__container">
-        <h3 className='product__title'>{title}</h3>
-        <ul className='product__list'>
+    <section id="products" className="products">
+      <div className="products__container">
+        <h3 className="products__title">{title}</h3>
+        <ul className="products__list">
           {products.map((product) => (
-            <li key={product.id} className='product__item'>
+            <li key={product.id} className="products__item">
               <ProductCard product={product} />
             </li>
           ))}
         </ul>
-        <Button type='button' text='Завантажити ще'/>
+        <Button type="button" text="Завантажити ще" />
       </div>
     </section>
-  )
+  );
 }
 
-export default Products
+export default Products;

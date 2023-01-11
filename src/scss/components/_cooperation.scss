@@ -1,19 +1,22 @@
-.cooperation{
+.cooperation {
   background-image: linear-gradient(to right bottom, #fdfcfe, #ffffff);
 
-  &__body{
+  &__body {
     display: flex;
-    gap: 3%;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
   }
 
-  &__form,
-  &__content{
-    flex-basis: 50%;
+  &__content {
+    text-align: center;
+  }
+
+  &__form {
+    width: 640px;
   }
 
   &__text {
     line-height: 2;
   }
 }
-
-

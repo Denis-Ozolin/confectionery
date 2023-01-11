@@ -1,15 +1,15 @@
-import React from 'react'
-import { Hero, Products, Delivery, Contacts } from '../components'
+import React from "react";
+import { Hero, Products, Delivery, Contacts } from "../components";
 
-function Main({title}) {
+function Main() {
   return (
     <main>
-      <Hero/>
-      <Products title={title} />
+      <Hero />
+      <Products />
       <Delivery />
       <Contacts />
     </main>
-  )
+  );
 }
 
-export default Main
+export default Main;

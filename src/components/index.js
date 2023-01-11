@@ -15,9 +15,12 @@ import { default as Form } from "./Form";
 import { default as Signin } from "./Signin";
 import { default as Modal } from "./Modal";
 import { default as Footer } from "./Footer";
+import { default as AppBar } from "./AppBar";
+import { default as Layout } from "./Layout";
 
 export {
   Header,
+  AppBar,
   Social,
   Hero,
   Products,
@@ -34,4 +37,5 @@ export {
   Signin,
   Modal,
   Footer,
+  Layout,
 };

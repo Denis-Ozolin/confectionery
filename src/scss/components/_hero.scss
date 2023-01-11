@@ -1,10 +1,11 @@
 .hero {
   &__content {
     display: flex;
+    gap: 20px;
     width: 100%;
   }
 
-  &__image {
+  &__content-part {
     flex: 1;
   }
 }

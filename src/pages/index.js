@@ -1,5 +1,5 @@
 import { default as Main } from "./Main";
-import { default as Auth } from "./Auth";
-import { default as Buy } from "./Buy";
+import { default as Registration } from "./Registration";
+import { default as Orders } from "./Orders";
 
-export { Main, Auth, Buy };
+export { Main, Registration, Orders };

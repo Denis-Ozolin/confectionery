@@ -1,24 +1,15 @@
-import { useState } from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { NavLink } from "react-router-dom"; //, useLocation
-import AnchorLink from "react-anchor-link-smooth-scroll";
+import { Link } from "react-router-dom";
 
 import { authSelectors } from "../redux/auth";
 import { toggleLogged } from "../redux/auth/auth-slice";
-import { Social, Modal, Signin } from "../components";
-import { productTypes } from "../settings/menu/productTypes";
+import { AppBar, Social, Modal, Signin } from "../components";
 
-function Header({ getProductCategory }) {
-  const [onSortNav, setOnSortNav] = useState(false);
-  const [isOpenModal, setIsOpenModal] = useState(false);
+function Header() {
+  const [isOpenModal, setIsOpenModal] = React.useState(false);
   const dispatch = useDispatch();
-  // const location = useLocation();
-  // const isCooperation = location.pathname === '/cooperation';
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
-
-  const toggleSortNav = () => {
-    setOnSortNav(!onSortNav);
-  };
 
   const onOpenModal = () => {
     setIsOpenModal(true);
@@ -32,80 +23,13 @@ function Header({ getProductCategory }) {
     dispatch(toggleLogged());
   };
 
-  const getDefaultCategory = (event) => {
-    event.preventDefault();
-    toggleSortNav();
-    getProductCategory(event.target.textContent);
-  };
-
   return (
     <header className="header">
       <div className="header__container">
-        <NavLink to="*">
+        <Link to="/">
           <h2 className="header__logo">Sweet Village</h2>
-        </NavLink>
-        {/* {isCooperation ?
-          <NavLink to='*' className='nav__link'>На головну</NavLink> :  */}
-        <nav className="header__nav nav">
-          {!onSortNav ? (
-            <AnchorLink
-              onClick={(e) => getDefaultCategory(e)}
-              href="#products"
-              offset="90"
-              className="nav__link nav__link--main"
-            >
-              Продукція
-            </AnchorLink>
-          ) : (
-            <AnchorLink
-              onClick={toggleSortNav}
-              href="#home"
-              offset="90"
-              className="nav__link nav__link--main"
-            >
-              Головне меню
-            </AnchorLink>
-          )}
-          {!onSortNav ? (
-            <ul className="nav__list">
-              <li>
-                <AnchorLink href="#delivery" offset="90" className="nav__link">
-                  Доставка
-                </AnchorLink>
-              </li>
-              <li>
-                <AnchorLink href="#contacts" offset="90" className="nav__link">
-                  Контакти
-                </AnchorLink>
-              </li>
-              <li>
-                {isLoggedIn ? (
-                  <NavLink to="/cooperation" className="nav__link">
-                    Співпраця
-                  </NavLink>
-                ) : (
-                  <NavLink to="/cart" className="nav__link">
-                    Кошик
-                  </NavLink>
-                )}
-              </li>
-            </ul>
-          ) : (
-            <ul className="nav__list">
-              {productTypes.map((type) => (
-                <li key={type} onClick={() => getProductCategory(type)}>
-                  <AnchorLink
-                    href="#products"
-                    offset="90"
-                    className="nav__link"
-                  >
-                    {type}
-                  </AnchorLink>
-                </li>
-              ))}
-            </ul>
-          )}
-        </nav>
+        </Link>
+        <AppBar isLoggedIn={isLoggedIn} />
         <div className="header__settings">
           {isLoggedIn ? (
             <button onClick={onOpenModal} className="login">
@@ -122,9 +46,9 @@ function Header({ getProductCategory }) {
             </button>
           ) : (
             <button onClick={onLogOut} className="login">
-              <NavLink to="*">
+              <Link to="/">
                 <span className="login__text">Вийти</span>
-              </NavLink>
+              </Link>
             </button>
           )}
           <Social />

@@ -1,0 +1,22 @@
+.sort-button {
+  padding: 8px 10px;
+  border-radius: 30px;
+  background-color: $accentColor;
+  color: $defaultColor;
+  font-weight: bold;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: $transition;
+
+  &:hover {
+    background-color: #902914c8;
+    color: $defaultColor;
+  }
+
+  &:focus,
+  &:active {
+    outline: 1px solid $accentColor;
+    background-color: $defaultColor;
+    color: $accentColor;
+  }
+}

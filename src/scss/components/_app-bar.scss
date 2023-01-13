@@ -1,0 +1,16 @@
+.nav,
+.nav__list {
+  display: flex;
+  gap: 60px;
+
+  &__link {
+    transition: $transition;
+    color: $textColor;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $accentColor;
+    }
+  }
+}

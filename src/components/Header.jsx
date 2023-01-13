@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import { authSelectors } from "../redux/auth";
 import { toggleLogged } from "../redux/auth/auth-slice";
-import { AppBar, Social, Modal, Signin } from "../components";
+import { AppBar, Social, Modal, Signin, CartIcon } from "../components";
 
 function Header() {
   const [isOpenModal, setIsOpenModal] = React.useState(false);
@@ -45,11 +45,16 @@ function Header() {
               <span className="login__text">Вхід</span>
             </button>
           ) : (
-            <button onClick={onLogOut} className="login">
-              <Link to="/">
-                <span className="login__text">Вийти</span>
+            <>
+              <Link to="cart">
+                <CartIcon />
               </Link>
-            </button>
+              <button onClick={onLogOut} className="login">
+                <Link to="/">
+                  <span className="login__text">Вийти</span>
+                </Link>
+              </button>
+            </>
           )}
           <Social />
         </div>

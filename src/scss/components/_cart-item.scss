@@ -1,0 +1,14 @@
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+
+  &__name {
+    color: $accentColor;
+  }
+
+  &__value {
+    display: flex;
+    gap: 30px;
+  }
+}

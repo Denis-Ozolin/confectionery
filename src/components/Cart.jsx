@@ -1,36 +1,23 @@
+import React from "react";
+import { useSelector } from "react-redux";
+
+import { cartSelectors } from "../redux/cart";
+import { CartItem } from "../components";
+
 function Cart() {
+  const selectedProducts = useSelector(cartSelectors.selectedProducts);
+
   return (
-    <section className="cooperation">
-      <div className="cooperation__container">
+    <section className="cart">
+      <div className="cart__container">
         <h3 className="cart__title">Кошик</h3>
-        <p className="cooperation__text">
-          Київське кондитерське виробництво 'Sweet Village' працює з 2015 року
-          та відкрите для співпраці з кав'ярнями, магазинами, ресторанами тощо.
-        </p>
-        <p className="cooperation__text">
-          Ми  працюємо тільки з натуральними інгредієнтами, Не використовуємо
-          консерванти, ароматизатори та не збільшуємо штучно термін придатності
-          десертів.
-        </p>
-        <p className="cooperation__text">
-          Надаємо великий вибір нашим партнерам, оновлюємо асортимент,
-          підтримуємо різноманітність.
-        </p>
-        <p className="cooperation__text">
-          Висока якість продукту та приємні оптові ціни.
-        </p>
-        <p className="cooperation__text">
-          Якщо Ви хочете стати нашим партнером, заповніть, будь ласка, форму
-          реєстрації.
-        </p>
-        <p className="cooperation__text">
-          Ви отримаєте доступ до нашого сайту, як партнер, зможете оформлювати
-          замовлення через кошик та бачити спеціальні ціни, які ми пропонуємо
-          для співпраці.
-        </p>
-        <p className="cooperation__text">
-          Дякуємо за увагу! Будемо щасливі працювати з Вами!
-        </p>
+        <ul className="cart__list">
+          {selectedProducts.map((product) => (
+            <li key={product.id}>
+              <CartItem product={product} />
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

@@ -1,7 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  products: [],
+  products: [
+    {
+      id: 1,
+      name: "Торт «Полуниця Вершки»",
+      image: "Полуниця_Вершки2",
+      description:
+        "бісквіт, полуничне компоте, крем-сир з додаванням полуниці, крем на основі білого шоколаду",
+      weight: 1.5,
+      price: 450,
+    },
+  ],
   allOrders: [],
 };
 
@@ -10,7 +20,7 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     add(state, action) {
-      state.products = [action.payload, ...state.products];
+      console.log(add);
     },
   },
 });

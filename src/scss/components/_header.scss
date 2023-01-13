@@ -40,22 +40,22 @@
   }
 }
 
-.nav,
-.nav__list {
-  display: flex;
-  gap: 60px;
+// .nav,
+// .nav__list {
+//   display: flex;
+//   gap: 60px;
 
-  &__link {
-    transition: $transition;
-    color: $textColor;
+//   &__link {
+//     transition: $transition;
+//     color: $textColor;
 
-    &:hover,
-    &:focus,
-    &:active {
-      color: $accentColor;
-    }
-  }
-}
+//     &:hover,
+//     &:focus,
+//     &:active {
+//       color: $accentColor;
+//     }
+//   }
+// }
 
 .login {
   display: flex;

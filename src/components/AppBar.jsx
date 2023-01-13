@@ -4,7 +4,7 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 
 function AppBar({ isLoggedIn }) {
   return (
-    <nav className="header__nav nav">
+    <nav className="nav">
       <ul className="nav__list">
         <li>
           <AnchorLink href="#products" offset="90" className="nav__link">
@@ -27,8 +27,8 @@ function AppBar({ isLoggedIn }) {
               Співпраця
             </Link>
           ) : (
-            <Link to="cart" className="nav__link">
-              Кошик
+            <Link to="orders" className="nav__link">
+              Мої замовлення
             </Link>
           )}
         </li>

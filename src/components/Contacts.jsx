@@ -1,4 +1,4 @@
-import { Map } from "../components";
+// import { Map } from "../components";
 
 function Contacts() {
   return (
@@ -24,7 +24,7 @@ function Contacts() {
               <a href="mailto:sweetvillage@ukr.net">sweetvillage@ukr.net</a>
             </p>
           </div>
-          <Map />
+          {/* <Map /> */}
         </div>
       </div>
     </section>

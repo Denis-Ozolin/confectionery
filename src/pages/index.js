@@ -1,5 +1,6 @@
-import { default as Main } from "./Main";
-import { default as Registration } from "./Registration";
-import { default as Orders } from "./Orders";
+import { default as MainPage } from "./MainPage";
+import { default as RegistrationPage } from "./RegistrationPage";
+import { default as OrdersPage } from "./OrdersPage";
+import { default as CartPage } from "./CartPage";
 
-export { Main, Registration, Orders };
+export { MainPage, RegistrationPage, OrdersPage, CartPage };

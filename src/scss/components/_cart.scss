@@ -1,0 +1,10 @@
+.cart {
+  &__list {
+    width: 800px;
+    margin: 0 auto;
+
+    & > li:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}

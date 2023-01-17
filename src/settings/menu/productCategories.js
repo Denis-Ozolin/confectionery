@@ -1,4 +1,4 @@
-export const productTypes = [
+export const productCategories = [
   "Уся продукція",
   "Вагові торти",
   "Порційні торти",

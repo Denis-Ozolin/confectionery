@@ -6,15 +6,9 @@
   font-weight: bold;
   cursor: pointer;
   box-sizing: border-box;
-  transition: $transition;
+  transition: all 0.2s ease;
 
-  &:hover {
-    background-color: #902914c8;
-    color: $defaultColor;
-  }
-
-  &:focus,
-  &:active {
+  &--active {
     outline: 1px solid $accentColor;
     background-color: $defaultColor;
     color: $accentColor;

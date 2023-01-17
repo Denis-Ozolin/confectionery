@@ -1,36 +1,55 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import products from "../db/products.json";
 import { ProductCard, Button, ProductCategoryMenu } from "../components";
 
 function Products() {
-  const [currentCategory, setCurrentCategory] = useState(null);
-  const [currentProducts, setCurrentProducts] = useState(products);
+  const [selectedProducts, setSelectedProducts] = useState(products);
+  const [productsCategory, setProductsCategory] = useState("Уся продукція");
 
-  const getCategoryValue = (e) => {
-    setCurrentCategory(e.target.textContent);
+  // const sortProducts = (e) => {
+  //   const selectedCategory = e.target.textContent;
 
-    const selectedProducts = currentCategory
-      ? products.filter(({ category }) => category === currentCategory)
-      : products;
+  // const isSelectCategory = products.find(({ category }) => category === selectedCategory);
+  // if (!isSelectCategory) {
+  //   setSelectedProducts(products);
+  //   return;
+  // }
 
-    setCurrentProducts(selectedProducts);
+  // const sortedProducts = products.filter(({ category }) => category === selectedCategory);
+  // setSelectedProducts(sortedProducts);
+  // };
+
+  const selectCategory = (category) => {
+    setProductsCategory(category);
   };
 
-  // const selectedProducts = currentCategory? products.filter(({ category }) =>
-  //   category === currentCategory): products;
+  useEffect(() => {
+    const isSelectCategory = products.find(
+      ({ category }) => category === productsCategory
+    );
 
-  // useEffect(() => {
-  //   setCurrentProducts(selectedProducts)
-  // }, [selectedProducts])
+    if (!isSelectCategory) {
+      setSelectedProducts(products);
+      return;
+    }
+    const sortedProducts = products.filter(
+      ({ category }) => category === productsCategory
+    );
+
+    setSelectedProducts(sortedProducts);
+  }, [productsCategory]);
 
   return (
     <section id="products" className="products">
       <div className="products__container">
         <h3 className="products__title">Продукція</h3>
-        <ProductCategoryMenu getCategory={getCategoryValue} />
+        <ProductCategoryMenu
+          sortProducts={selectCategory}
+          selectedCategory={productsCategory}
+        />
         <ul className="products__list">
-          {currentProducts.map((product) => (
+          {selectedProducts.map((product) => (
             <li key={product.id} className="products__item">
               <ProductCard product={product} />
             </li>

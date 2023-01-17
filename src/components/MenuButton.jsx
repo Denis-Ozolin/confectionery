@@ -1,9 +1,18 @@
 import React from "react";
 
-function MenuButton({ children, onClick }) {
+function MenuButton({ category, sortProducts, selectedCategory }) {
+  const selectCategory = () => {
+    sortProducts(category);
+  };
+
+  const isActive =
+    selectedCategory === category
+      ? "sort-button sort-button--active"
+      : "sort-button";
+
   return (
-    <button onClick={(e) => onClick(e)} className="sort-button" type="button">
-      {children}
+    <button onClick={selectCategory} className={isActive} type="button">
+      {category}
     </button>
   );
 }

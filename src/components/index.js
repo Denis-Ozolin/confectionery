@@ -23,6 +23,7 @@ import { default as CartItemControls } from "./CartItemControls";
 import { default as Orders } from "./Orders";
 import { default as ProductCategoryMenu } from "./ProductCategoryMenu";
 import { default as MenuButton } from "./MenuButton";
+import { default as Pagination } from "./Pagination";
 
 export {
   Header,
@@ -50,4 +51,5 @@ export {
   Orders,
   ProductCategoryMenu,
   MenuButton,
+  Pagination,
 };

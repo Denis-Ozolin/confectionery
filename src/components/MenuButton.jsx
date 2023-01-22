@@ -1,17 +1,14 @@
-import React from "react";
-
-function MenuButton({ category, sortProducts, selectedCategory }) {
+function MenuButton({ category, onSortProducts, isActive }) {
   const selectCategory = () => {
-    sortProducts(category);
+    onSortProducts(category);
   };
 
-  const isActive =
-    selectedCategory === category
-      ? "sort-button sort-button--active"
-      : "sort-button";
-
   return (
-    <button onClick={selectCategory} className={isActive} type="button">
+    <button
+      onClick={selectCategory}
+      className={isActive ? "sort-button sort-button--active" : "sort-button"}
+      type="button"
+    >
       {category}
     </button>
   );

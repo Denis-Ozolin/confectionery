@@ -6,7 +6,7 @@
   font-weight: bold;
   cursor: pointer;
   box-sizing: border-box;
-  transition: all 0.2s ease;
+  transition: $transition;
 
   &--active {
     outline: 1px solid $accentColor;

@@ -31,7 +31,7 @@ function Header() {
         </Link>
         <AppBar isLoggedIn={isLoggedIn} />
         <div className="header__settings">
-          {isLoggedIn ? (
+          {!isLoggedIn ? (
             <button onClick={onOpenModal} className="login">
               <svg
                 className="login__icon"

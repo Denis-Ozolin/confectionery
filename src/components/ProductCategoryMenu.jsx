@@ -2,14 +2,14 @@ import { productCategories } from "../settings/menu/productCategories";
 
 import { MenuButton } from ".";
 
-function ProductCategoryMenu({ sortProducts, selectedCategory }) {
+function ProductCategoryMenu({ onSortProducts, selectedCategory }) {
   return (
     <ul className="menu">
       {productCategories.map((category) => (
         <li key={category}>
           <MenuButton
-            sortProducts={sortProducts}
-            selectedCategory={selectedCategory}
+            onSortProducts={onSortProducts}
+            isActive={selectedCategory === category}
             category={category}
           />
         </li>

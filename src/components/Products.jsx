@@ -1,27 +1,29 @@
 import { useState, useEffect } from "react";
 
 import products from "../db/products.json";
-import { ProductCard, Button, ProductCategoryMenu } from "../components";
+import { ProductCard, ProductCategoryMenu, Pagination } from "../components";
 
 function Products() {
   const [selectedProducts, setSelectedProducts] = useState(products);
   const [productsCategory, setProductsCategory] = useState("Уся продукція");
+  // const [productsIsLoading, setProductsIsLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [productsPerPage] = useState(8);
 
-  // const sortProducts = (e) => {
-  //   const selectedCategory = e.target.textContent;
+  const lastProductIndex = currentPage * productsPerPage;
+  const firstProductIndex = lastProductIndex - productsPerPage;
+  const currentProducts = selectedProducts.slice(
+    firstProductIndex,
+    lastProductIndex
+  );
+  const isPagination = selectedProducts.length > productsPerPage;
 
-  // const isSelectCategory = products.find(({ category }) => category === selectedCategory);
-  // if (!isSelectCategory) {
-  //   setSelectedProducts(products);
-  //   return;
-  // }
-
-  // const sortedProducts = products.filter(({ category }) => category === selectedCategory);
-  // setSelectedProducts(sortedProducts);
-  // };
-
-  const selectCategory = (category) => {
+  const onSelectCategory = (category) => {
     setProductsCategory(category);
+  };
+
+  const onPaginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
   };
 
   useEffect(() => {
@@ -45,17 +47,23 @@ function Products() {
       <div className="products__container">
         <h3 className="products__title">Продукція</h3>
         <ProductCategoryMenu
-          sortProducts={selectCategory}
+          onSortProducts={onSelectCategory}
           selectedCategory={productsCategory}
         />
         <ul className="products__list">
-          {selectedProducts.map((product) => (
+          {currentProducts.map((product) => (
             <li key={product.id} className="products__item">
               <ProductCard product={product} />
             </li>
           ))}
         </ul>
-        <Button type="button" text="Завантажити ще" />
+        {isPagination && (
+          <Pagination
+            productsPerPage={productsPerPage}
+            TotalProducts={selectedProducts.length}
+            onPaginate={onPaginate}
+          />
+        )}
       </div>
     </section>
   );

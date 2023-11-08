@@ -1,5 +1,3 @@
-// import { Map } from "../components";
-
 function Contacts() {
   return (
     <section id="contacts" className="contacts">
@@ -24,7 +22,6 @@ function Contacts() {
               <a href="mailto:sweetvillage@ukr.net">sweetvillage@ukr.net</a>
             </p>
           </div>
-          {/* <Map /> */}
         </div>
       </div>
     </section>

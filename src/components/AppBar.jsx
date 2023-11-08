@@ -1,25 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom"; //, useLocation
-import AnchorLink from "react-anchor-link-smooth-scroll";
+// import a from "react-anchor-link-smooth-scroll";
 
 function AppBar({ isLoggedIn }) {
   return (
     <nav className="nav">
       <ul className="nav__list">
         <li>
-          <AnchorLink href="#products" offset="90" className="nav__link">
+          <Link to="/" className="nav__link">
             Продукція
-          </AnchorLink>
+          </Link>
         </li>
         <li>
-          <AnchorLink href="#delivery" offset="90" className="nav__link">
+          <Link to="/" className="nav__link">
             Доставка
-          </AnchorLink>
+          </Link>
         </li>
         <li>
-          <AnchorLink href="#contacts" offset="90" className="nav__link">
+          <Link to="/" className="nav__link">
             Контакти
-          </AnchorLink>
+          </Link>
         </li>
         <li>
           {isLoggedIn ? (

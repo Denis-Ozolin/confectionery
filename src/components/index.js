@@ -10,7 +10,6 @@ import { default as Delivery } from "./Delivery";
 import { default as Cooperation } from "./Cooperation";
 import { default as Cart } from "./Cart";
 import { default as Contacts } from "./Contacts";
-import { default as Map } from "./Map";
 import { default as Form } from "./Form";
 import { default as Signin } from "./Signin";
 import { default as Modal } from "./Modal";
@@ -39,7 +38,6 @@ export {
   Cooperation,
   Cart,
   Contacts,
-  Map,
   Form,
   Signin,
   Modal,

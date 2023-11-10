@@ -23,6 +23,9 @@ import { default as Orders } from "./Orders";
 import { default as ProductCategoryMenu } from "./ProductCategoryMenu";
 import { default as MenuButton } from "./MenuButton";
 import { default as Pagination } from "./Pagination";
+import { default as PrivateRoute } from "./PrivateRoute";
+import { default as RestrictedRoute } from "./RestrictedRoute";
+import { default as IsLoading } from "./IsLoading";
 
 export {
   Header,
@@ -50,4 +53,7 @@ export {
   ProductCategoryMenu,
   MenuButton,
   Pagination,
+  PrivateRoute,
+  RestrictedRoute,
+  IsLoading,
 };

@@ -5,5 +5,4 @@ export const productCategories = [
   "Тістечка",
   "Трайфли",
   "Солодкі рулети",
-  "Випічка",
 ];

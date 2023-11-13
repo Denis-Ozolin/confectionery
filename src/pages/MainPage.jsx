@@ -4,9 +4,9 @@ function MainPage() {
   return (
     <>
       <Hero />
-      <Products />
+      {/* <Products />
       <Delivery />
-      <Contacts />
+      <Contacts /> */}
     </>
   );
 }

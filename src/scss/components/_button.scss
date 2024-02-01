@@ -2,9 +2,11 @@
   position: relative;
   display: block;
   padding: 15px 30px;
-  margin: 0 auto;
+  // margin: 0 auto;
   border-radius: 30px;
-  box-shadow: 0 0 40px 40px $accentColor inset, 0 0 0 0 $accentColor;
+  background-color: $accentColor;
+  border: 1px solid transparent;
+  // box-shadow: 0 0 40px 40px $accentColor inset, 0 0 0 0 $accentColor;
   font-weight: bold;
   font-size: 16px;
   font-style: italic;
@@ -16,12 +18,14 @@
 
   &:hover,
   &:focus {
-    box-shadow: 0 0 8px 0 $accentColor inset, 0 0 8px 4px $accentColor;
+    // box-shadow: 0 0 8px 0 $accentColor inset, 0 0 8px 4px $accentColor;
     color: $accentColor;
+    background-color: $defaultColor;
+    border-color: $accentColor;
   }
 
-  &:active {
-    box-shadow: 0 0 40px 40px $accentColor inset, 0 0 0 0 $accentColor;
-    color: $defaultColor;
-  }
+  // &:active {
+  //   box-shadow: 0 0 40px 40px $accentColor inset, 0 0 0 0 $accentColor;
+  //   color: $defaultColor;
+  // }
 }

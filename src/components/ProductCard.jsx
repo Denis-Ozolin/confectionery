@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 
 import { authSelectors } from "../redux/auth";
 import { SmallButton, ButtonIcon } from "../components";
+import { Link } from "react-router-dom";
 
 function ProductCard({ product }) {
   const [productCount, setProductCount] = useState(0);
@@ -18,17 +19,21 @@ function ProductCard({ product }) {
     setProductCount((productCount) => productCount - 1);
   };
 
-  const { name, image, description, weight, price } = product;
+  const { name, image, description, weight, price, id } = product;
 
   return (
     <div className="product">
-      <img
-        className="product__image"
-        src={window.location.origin + `/products/${image}.jpg`}
-        alt={name}
-      />
+      <Link to={`/products/${id}`}>
+        <img
+          className="product__image"
+          src={window.location.origin + `/products/${image}.jpg`}
+          alt={name}
+        />
+      </Link>
       <div className="product__content">
-        <h4 className="product__name">{name}</h4>
+        <Link to={`/products/${id}`}>
+          <h4 className="product__name">{name}</h4>
+        </Link>
         <p className="product__description">{description}</p>
         {isLoggedIn && (
           <>

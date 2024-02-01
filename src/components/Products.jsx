@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
 
-import products from "../db/products.json";
+// import products from "../db/products.json";
 import { ProductCard, ProductCategoryMenu, Pagination } from "../components";
+import { useDispatch, useSelector } from "react-redux";
+import { selectProducts } from "../redux/products/selectors";
+import productOperations from "../redux/products/products-operations";
 // import { usePagination } from "../hooks";
 
 function Products() {
@@ -17,6 +20,8 @@ function Products() {
   //   contentPerPage: productsPerPage,
   //   count: products.length,
   // });
+  const dispatch = useDispatch();
+  const products = useSelector(selectProducts);
   const [selectedProducts, setSelectedProducts] = useState(products);
   const [productsCategory, setProductsCategory] = useState("Уся продукція");
   // const [productsIsLoading, setProductsIsLoading] = useState(false);
@@ -40,6 +45,10 @@ function Products() {
   // };
 
   useEffect(() => {
+    dispatch(productOperations.getAllProducts());
+  }, [dispatch]);
+
+  useEffect(() => {
     const isSelectCategory = products.find(
       ({ category }) => category === productsCategory
     );
@@ -53,7 +62,7 @@ function Products() {
     );
 
     setSelectedProducts(sortedProducts);
-  }, [productsCategory]);
+  }, [productsCategory, products]);
 
   return (
     <section id="products" className="products">

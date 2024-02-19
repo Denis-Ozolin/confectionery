@@ -7,8 +7,15 @@
     color: $accentColor;
   }
 
-  &__value {
+  &__options {
     display: flex;
-    gap: 30px;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
 }

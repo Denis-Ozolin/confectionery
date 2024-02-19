@@ -26,6 +26,7 @@ import { default as Pagination } from "./Pagination";
 import { default as PrivateRoute } from "./PrivateRoute";
 import { default as RestrictedRoute } from "./RestrictedRoute";
 import { default as IsLoading } from "./IsLoading";
+import { default as SvgIcon } from "./SvgIcon";
 
 export {
   Header,
@@ -56,4 +57,5 @@ export {
   PrivateRoute,
   RestrictedRoute,
   IsLoading,
+  SvgIcon,
 };

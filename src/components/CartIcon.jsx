@@ -1,7 +1,13 @@
 import React from "react";
 
+import { SvgIcon } from "../components";
+
 function CartIcon() {
-  return <div>Cart</div>;
+  return (
+    <>
+      <SvgIcon id="cart" />
+    </>
+  );
 }
 
 export default CartIcon;

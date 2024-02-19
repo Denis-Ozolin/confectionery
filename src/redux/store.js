@@ -13,6 +13,7 @@ import storage from "redux-persist/lib/storage";
 // import { jwtMiddleware } from '../middlewares/JWTrefreshMiddleware';
 import { authReducer } from "./auth";
 import { cartReducer } from "./cart";
+import { productsReducer } from "./products/products-slice";
 
 // import { balanceReducer } from './balance';
 
@@ -25,6 +26,7 @@ const authPersistConfig = {
 const rootReducer = combineReducers({
   auth: persistReducer(authPersistConfig, authReducer),
   cart: cartReducer,
+  products: productsReducer,
 });
 
 export const store = configureStore({

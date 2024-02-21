@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
 import { authSelectors } from "../redux/auth";
+import { cartSelectors } from "../redux/cart";
 import { toggleLogged } from "../redux/auth/auth-slice";
 import { AppBar, Social, Modal, Signin, CartIcon } from "../components";
 
@@ -10,6 +11,7 @@ function Header() {
   const [isOpenModal, setIsOpenModal] = React.useState(false);
   const dispatch = useDispatch();
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
+  const cartProducts = useSelector(cartSelectors.selectedProducts);
 
   const onOpenModal = () => {
     setIsOpenModal(true);
@@ -47,7 +49,7 @@ function Header() {
           ) : (
             <>
               <Link to="cart">
-                <CartIcon />
+                <CartIcon productCount={cartProducts.length} />
               </Link>
               <button onClick={onLogOut} className="login">
                 <Link to="/">

@@ -10,21 +10,68 @@ const initialState = {
         "бісквіт, полуничне компоте, крем-сир з додаванням полуниці, крем на основі білого шоколаду",
       weight: 1.5,
       price: 450,
+      count: 1,
+    },
+    {
+      id: 2,
+      name: "Торт «Вершки»",
+      image: "Вершки2",
+      description: " крем на основі білого шоколаду",
+      weight: 1,
+      price: 100,
+      count: 1,
     },
   ],
-  allOrders: [],
+  totalPrice: 0,
 };
 
 const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    add(state, action) {
-      console.log(add);
+    addProduct(state, action) {
+      const findProduct = state.products.find(
+        (product) => product.id === action.payload.id
+      );
+
+      if (findProduct) {
+        findProduct.count++;
+      } else {
+        state.products.push({ ...action.payload });
+      }
+
+      state.totalPrice = state.products.reduce((sum, product) => {
+        return product.price * product.count + sum;
+      }, 0);
+    },
+    removeProduct(state, action) {
+      const findProduct = state.products.find(
+        (product) => product.id === action.payload.id
+      );
+
+      if (findProduct && !findProduct.count) {
+        return;
+      } else {
+        findProduct.count--;
+      }
+
+      state.totalPrice = state.totalPrice - action.payload.price;
+    },
+    clearProducts(state, action) {
+      state.products = state.products.filter(
+        (product) => product.id !== action.payload.id
+      );
+
+      const currentTotalPrice =
+        state.totalPrice - action.payload.price * action.payload.count <= 0
+          ? 0
+          : state.totalPrice - action.payload.price * action.payload.count;
+
+      state.totalPrice = currentTotalPrice;
     },
   },
 });
 
 export default cartSlice.reducer;
 
-export const { add } = cartSlice.actions;
+export const { addProduct, removeProduct, clearProducts } = cartSlice.actions;

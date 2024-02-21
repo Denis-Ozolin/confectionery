@@ -1,8 +1,8 @@
 const selectedProducts = (state) => state.cart.products;
-const allOrders = (state) => state.cart.allOrders;
+const totalPrice = (state) => state.cart.totalPrice;
 
 const cartSelectors = {
   selectedProducts,
-  allOrders,
+  totalPrice,
 };
 export default cartSelectors;

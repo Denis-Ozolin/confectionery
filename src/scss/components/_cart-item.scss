@@ -7,8 +7,26 @@
     color: $accentColor;
   }
 
-  &__value {
+  &__options {
     display: flex;
-    gap: 30px;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__count {
+    width: 80px;
+    text-align: right;
+  }
+
+  &__price {
+    width: 100px;
+    margin-right: 10px;
+    text-align: right;
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
 }

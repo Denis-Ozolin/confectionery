@@ -18,7 +18,6 @@ import { default as AppBar } from "./AppBar";
 import { default as Layout } from "./Layout";
 import { default as CartItem } from "./CartItem";
 import { default as CartIcon } from "./CartIcon";
-import { default as CartItemControls } from "./CartItemControls";
 import { default as Orders } from "./Orders";
 import { default as ProductCategoryMenu } from "./ProductCategoryMenu";
 import { default as MenuButton } from "./MenuButton";
@@ -26,6 +25,7 @@ import { default as Pagination } from "./Pagination";
 import { default as PrivateRoute } from "./PrivateRoute";
 import { default as RestrictedRoute } from "./RestrictedRoute";
 import { default as IsLoading } from "./IsLoading";
+import { default as SvgIcon } from "./SvgIcon";
 
 export {
   Header,
@@ -47,7 +47,6 @@ export {
   Footer,
   Layout,
   CartItem,
-  CartItemControls,
   CartIcon,
   Orders,
   ProductCategoryMenu,
@@ -56,4 +55,5 @@ export {
   PrivateRoute,
   RestrictedRoute,
   IsLoading,
+  SvgIcon,
 };

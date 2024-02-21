@@ -7,7 +7,7 @@ function CartIcon({ productCount = 0 }) {
     <span className="cart-icon">
       <SvgIcon id="cart" />
       {productCount > 0 && (
-        <span className="cart-icon__count">{productCount}</span>
+        <SvgIcon id="muffin" size={16} className="cart-icon__count" />
       )}
     </span>
   );

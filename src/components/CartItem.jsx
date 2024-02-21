@@ -15,11 +15,11 @@ function CartItem({ product }) {
   };
 
   const remove = () => {
-    dispatch(removeProduct(product.id));
+    dispatch(removeProduct(product));
   };
 
   const clear = () => {
-    dispatch(clearProducts(product.id));
+    dispatch(clearProducts(product));
   };
 
   return (
@@ -34,8 +34,8 @@ function CartItem({ product }) {
             <SvgIcon id="plus" size={30} />
           </Button>
         </div>
-        <p>{product.weight} кг</p>
-        <p>{product.price} грн</p>
+        <p className="cart-item__count">{product.count} од.</p>
+        <p className="cart-item__price">{product.price * product.count} грн.</p>
         <Button onClick={clear} option="secondary" title="Видалити">
           <SvgIcon id="trash" size={24} />
         </Button>

@@ -49,8 +49,7 @@ function Header() {
           ) : (
             <>
               <Link to="cart">
-                <CartIcon />
-                <span>{cartProducts.length}</span>
+                <CartIcon productCount={cartProducts.length} />
               </Link>
               <button onClick={onLogOut} className="login">
                 <Link to="/">

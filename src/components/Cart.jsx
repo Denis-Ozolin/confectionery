@@ -20,7 +20,9 @@ function Cart() {
           ))}
         </ul>
         <div className="cart__options">
-          <span>До сплати: {totalPrice} грн.</span>
+          <span>
+            До сплати: <span className="cart__price">{totalPrice}</span> грн.
+          </span>
           <Button>Замовити</Button>
         </div>
       </div>

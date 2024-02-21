@@ -18,7 +18,6 @@ import { default as AppBar } from "./AppBar";
 import { default as Layout } from "./Layout";
 import { default as CartItem } from "./CartItem";
 import { default as CartIcon } from "./CartIcon";
-import { default as CartItemControls } from "./CartItemControls";
 import { default as Orders } from "./Orders";
 import { default as ProductCategoryMenu } from "./ProductCategoryMenu";
 import { default as MenuButton } from "./MenuButton";
@@ -48,7 +47,6 @@ export {
   Footer,
   Layout,
   CartItem,
-  CartItemControls,
   CartIcon,
   Orders,
   ProductCategoryMenu,

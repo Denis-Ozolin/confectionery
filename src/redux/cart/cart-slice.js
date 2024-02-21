@@ -62,8 +62,12 @@ const cartSlice = createSlice({
         (product) => product.id !== action.payload.id
       );
 
-      state.totalPrice =
-        state.totalPrice - action.payload.price * action.payload.count;
+      const currentTotalPrice =
+        state.totalPrice - action.payload.price * action.payload.count <= 0
+          ? 0
+          : state.totalPrice - action.payload.price * action.payload.count;
+
+      state.totalPrice = currentTotalPrice;
     },
   },
 });

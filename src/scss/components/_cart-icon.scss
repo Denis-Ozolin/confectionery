@@ -1,0 +1,19 @@
+.cart-icon {
+  display: block;
+  position: relative;
+
+  &__count {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    font-size: 10px;
+    color: $defaultColor;
+    background-color: tomato;
+  }
+}

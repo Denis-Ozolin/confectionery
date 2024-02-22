@@ -27,16 +27,16 @@ function CartItem({ product }) {
       <p className="cart-item__name">{product.name}</p>
       <div className="cart-item__options">
         <div className="cart-item__controls">
-          <Button onClick={remove} option="secondary" title="Відняти">
+          <Button onClick={remove} option="icon" title="Відняти">
             <SvgIcon id="minus" size={30} />
           </Button>
-          <Button onClick={add} option="secondary" title="Додати">
+          <Button onClick={add} option="icon" title="Додати">
             <SvgIcon id="plus" size={30} />
           </Button>
         </div>
         <p className="cart-item__count">{product.count} од.</p>
         <p className="cart-item__price">{product.price * product.count} грн.</p>
-        <Button onClick={clear} option="secondary" title="Видалити">
+        <Button onClick={clear} option="icon" title="Видалити">
           <SvgIcon id="trash" size={24} />
         </Button>
       </div>

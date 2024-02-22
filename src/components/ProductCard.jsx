@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 import { authSelectors } from "../redux/auth";
-import { SmallButton, ButtonIcon } from "../components";
-import { Link } from "react-router-dom";
+import { Button, SvgIcon } from "../components";
 
 function ProductCard({ product }) {
   const [productCount, setProductCount] = useState(0);
@@ -42,13 +42,13 @@ function ProductCard({ product }) {
               <p className="product__price">Ціна {price} грн</p>
             </div>
             <div className="product__select">
-              <SmallButton onClick={removeProduct}>
-                <ButtonIcon id="minus" />
-              </SmallButton>
+              <Button onClick={removeProduct} option="secondary">
+                <SvgIcon id="minus" />
+              </Button>
               <span className="product__count">{productCount}</span>
-              <SmallButton onClick={addProduct}>
-                <ButtonIcon id="plus" />
-              </SmallButton>
+              <Button onClick={addProduct} option="secondary">
+                <SvgIcon id="plus" />
+              </Button>
             </div>
           </>
         )}

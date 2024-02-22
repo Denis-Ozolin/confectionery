@@ -1,6 +1,6 @@
 import { usePagination } from "../hooks";
 
-import { SmallButton } from "../components";
+import { Button } from "../components";
 
 function Pagination({ productsPerPage, products }) {
   const {
@@ -25,13 +25,14 @@ function Pagination({ productsPerPage, products }) {
   return (
     <ul className="pagination">
       {[...Array(totalPages).keys()].map((el) => (
-        <SmallButton
+        <Button
+          option="icon"
           onClick={() => setPage(el + 1)}
           key={el}
           className={`page ${page === el + 1 ? "active" : ""}`}
         >
           {el + 1}
-        </SmallButton>
+        </Button>
       ))}
       {/* {products.slice(firstContentIndex, lastContentIndex)
         .map((number) => (

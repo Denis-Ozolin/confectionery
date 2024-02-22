@@ -1,33 +1,11 @@
-import { useState, useEffect } from "react";
-
-// button types: primary, secondary, additional
-
 function Button({
   onClick,
   type = "button",
-  option = "",
+  option = "button",
   children,
   title = "",
 }) {
-  const [currentClassName, setCurrentClassName] = useState("button");
-
-  useEffect(() => {
-    if (!option) return;
-
-    switch (option) {
-      case "primary":
-        setCurrentClassName("primaryBtn");
-        break;
-      case "secondary":
-        setCurrentClassName("secondaryBtn");
-        break;
-      case "additional":
-        setCurrentClassName("additionalBtn");
-        break;
-      default:
-        setCurrentClassName("button");
-    }
-  }, [option]);
+  const currentClassName = option === "button" ? "button" : "icon";
 
   return (
     <button

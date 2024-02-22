@@ -1,12 +1,9 @@
-import { Hero, Products, Delivery, Contacts } from "../components";
+import { Hero } from "../components";
 
 function MainPage() {
   return (
     <>
       <Hero />
-      {/* <Products />
-      <Delivery />
-      <Contacts /> */}
     </>
   );
 }

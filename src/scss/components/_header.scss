@@ -16,7 +16,7 @@
     height: 1px;
     z-index: 6;
     transform: translateX(-50%);
-    background-color: $textColor;
+    background-color: $accentColor;
   }
 
   &__container {
@@ -52,6 +52,10 @@
   &__button {
     transition: $transition;
     cursor: pointer;
+
+    & * {
+      color: $textColor;
+    }
 
     &:hover .auth__text,
     &:focus .auth__text {

@@ -1,11 +1,20 @@
 .cart {
+  min-height: 100%;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-between;
+    background-color: gold;
+  }
+
   &__list {
-    max-width: 800px;
-    margin: 0 auto;
+    // max-width: 800px;
+    // margin: 0 auto;
     margin-bottom: 30px;
 
     & > li:not(:last-child) {
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
   }
 
@@ -13,11 +22,14 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    background: tomato;
+    margin-top: auto;
   }
 
   &__price {
     display: inline-block;
     width: 60px;
+    color: $accentColor;
     text-align: right;
   }
 }

@@ -3,9 +3,7 @@ import { default as Social } from "./Social";
 import { default as Hero } from "./Hero";
 import { default as Products } from "./Products";
 import { default as ProductCard } from "./ProductCard";
-import { default as SmallButton } from "./SmallButton";
 import { default as Button } from "./Button";
-import { default as ButtonIcon } from "./ButtonIcon";
 import { default as Delivery } from "./Delivery";
 import { default as Cooperation } from "./Cooperation";
 import { default as Cart } from "./Cart";
@@ -34,9 +32,7 @@ export {
   Hero,
   Products,
   ProductCard,
-  SmallButton,
   Button,
-  ButtonIcon,
   Delivery,
   Cooperation,
   Cart,

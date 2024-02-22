@@ -23,7 +23,7 @@ function Cart() {
           <span>
             До сплати: <span className="cart__price">{totalPrice}</span> грн.
           </span>
-          <Button>Замовити</Button>
+          <Button onClick={() => console.log("CLICK")}>Замовити</Button>
         </div>
       </div>
     </section>

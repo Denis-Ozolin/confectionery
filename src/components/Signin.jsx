@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
-import { Form, SmallButton, ButtonIcon } from "../components";
+import { Form, Button, SvgIcon } from "../components";
 import { defaultValues, schema, formOptions } from "../settings/form/signin";
 import { toggleLogged } from "../redux/auth/auth-slice";
 
@@ -16,9 +16,9 @@ function Signin({ closeModal }) {
   return (
     <div className="signin">
       <div className="signin__out">
-        <SmallButton onClick={closeModal}>
-          <ButtonIcon id="close" />
-        </SmallButton>
+        <Button onClick={closeModal} option="icon">
+          <SvgIcon id="close" size={30} />
+        </Button>
       </div>
       <Form
         defaultValues={defaultValues}

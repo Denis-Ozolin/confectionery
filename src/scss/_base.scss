@@ -54,7 +54,7 @@ body {
 }
 
 .wrapper {
-  min-height: 100vh;
+  // min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -63,9 +63,9 @@ main {
   flex: 1 1 auto;
 }
 
-section {
-  padding-top: 20px;
-}
+// section {
+//   min-height: calc(100vh - 120px);
+// }
 
 [class*="__container"] {
   max-width: 1230px;
@@ -74,10 +74,11 @@ section {
 }
 
 [class*="__title"] {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  padding-top: 10px;
   text-align: center;
   color: $accentColor;
-  font-size: 32px;
+  font-size: 26px;
   font-weight: 400;
   font-style: italic;
 }

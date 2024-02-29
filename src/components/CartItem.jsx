@@ -30,11 +30,11 @@ function CartItem({ product }) {
           <Button onClick={remove} option="icon" title="Відняти">
             <SvgIcon id="minus" size={30} />
           </Button>
+          <p className="cart-item__count">{product.count} од.</p>
           <Button onClick={add} option="icon" title="Додати">
             <SvgIcon id="plus" size={30} />
           </Button>
         </div>
-        <p className="cart-item__count">{product.count} од.</p>
         <p className="cart-item__price">{product.price * product.count} грн.</p>
         <Button onClick={clear} option="icon" title="Видалити">
           <SvgIcon id="trash" size={24} />

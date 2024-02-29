@@ -1,11 +1,35 @@
 .hero {
-  &__content {
+  width: 100%;
+  height: calc(100vh - 60px);
+  margin: 0 auto;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../../images/hero/hero.jpg");
+
+  &__container {
+    position: relative;
     display: flex;
-    gap: 20px;
+    align-items: flex-end;
+    justify-content: center;
+    height: 100%;
     width: 100%;
+    padding: 60px;
   }
 
-  &__content-part {
-    flex: 1;
+  &__content {
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    font-style: italic;
+    color: $defaultColor;
+    color: $accentColor;
+  }
+
+  &__social {
+    position: absolute;
+    top: 30px;
+    right: 0;
   }
 }

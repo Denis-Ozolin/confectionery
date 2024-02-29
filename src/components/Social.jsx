@@ -11,7 +11,8 @@ function Social() {
             target="_blank"
             rel="noreferrer"
           >
-            <SvgIcon id="instagram" />
+            <SvgIcon id="instagram" stroke="#902914" />
+            <span>www.instagram.com/bakerysweetvillage</span>
           </a>
         </li>
         <li className="social__item">
@@ -21,7 +22,8 @@ function Social() {
             target="_blank"
             rel="noreferrer"
           >
-            <SvgIcon id="telegram" />
+            <SvgIcon id="telegram" stroke="#902914" />
+            <span>t.me/sweetvillage_kyiv</span>
           </a>
         </li>
       </ul>
